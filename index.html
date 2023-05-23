@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Table Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#searchInput').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $('#myTable tbody tr').filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #searchInput {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Table Search</h2>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>30</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>Michael Johnson</td>
+                <td>35</td>
+                <td>Tokyo</td>
+            </tr>
+            <tr>
+                <td>Nathaniel Arthur</td>
+                <td>85</td>
+                <td>Kumasi</td>
+            </tr>
+            <tr>
+                <td>Yaw Asare</td>
+                <td>15</td>
+                <td>Asawase</td>
+            </tr>
+            <tr>
+                <td>Asante Wendy</td>
+                <td>20</td>
+                <td>Adum</td>
+            </tr>
+            <tr>
+                <td>Anastasia Esi Arthur</td>
+                <td>28</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Michael Blackson</td>
+                <td>85</td>
+                <td>Swansea</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
